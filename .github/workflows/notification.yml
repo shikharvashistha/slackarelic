@@ -1,0 +1,19 @@
+name: notification
+'on':
+    push
+  # schedule:
+  # - cron: "0 0 * * 1"
+jobs:
+  asciidoc:
+    runs-on: ubuntu-latest
+    name: Notification
+    steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: '16'
+        - run: |
+            npm install
+            npm audit fix
+            chmod u+x notification.js
+            ./notification.js --guid ${{ secrets.GUID }} --apikey ${{ secrets.APIKEY }} --slack ${{ secrets.WEBHOOK }}

@@ -1,7 +1,7 @@
 name: notification
 'on':
   schedule:
-   - cron: "30 5 * * 1" #Every Monday
+   - cron: "30 5 * * 0" #Every Monday
 jobs:
   asciidoc:
     runs-on: ubuntu-latest

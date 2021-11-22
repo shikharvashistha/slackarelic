@@ -14,7 +14,6 @@ jobs:
             node-version: '16'
         - run: |
             npm install
-            npm audit
-            npm audit fix --force
+            npm set audit false
             chmod u+x notification.js
             ./notification.js --guid ${{ secrets.GUID }} --apikey ${{ secrets.APIKEY }} --slack ${{ secrets.WEBHOOK }}

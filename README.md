@@ -1,2 +1,2 @@
 # slackarelic
-Slack Notifier for New Relic
+Slack Notifier for New Relic 

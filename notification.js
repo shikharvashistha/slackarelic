@@ -229,7 +229,7 @@ async function run() {
 
     await asyncForEach(pages, async (page, zeroIdx) => {
         let PDF_URL = await generateSnapshot(API_KEY, page.guid)
-        const PNG_URL = PDF_URL.replace("format=PDF", "format=PNG") + `&width=${WIDTH}` + `&height=${height}`
+        const PNG_URL = PDF_URL.replace("format=PDF", "format=PNG") + `&width=${WIDTH}&height=${HEIGHT}`
         console.log(`Posting page '${page.name}' to slack...`)
         await notifySlack(SLACK_URL, `${SLACK_SUBJECT}${SLACK_SUBJECT == "" ? "" : " - "}${page.name}`, PNG_URL, SLACK_LINK)
     })

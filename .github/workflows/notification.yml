@@ -17,3 +17,4 @@ jobs:
             npm set audit false
             chmod u+x notification.js
             ./notification.js --guid ${{ secrets.GUID }} --apikey ${{ secrets.APIKEY }} --slack ${{ secrets.WEBHOOK }}
+            ./notification.js --guid ${{ secrets.GUIDX }} --apikey ${{ secrets.APIKEY }} --slack ${{ secrets.WEBHOOK }}
